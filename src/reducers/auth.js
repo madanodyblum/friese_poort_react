@@ -14,6 +14,8 @@ export default function (state = initialState, action) {
             return { ...state, error: action.error }
     case types.FETCH_LANGUAGE_DATA:
             return { ...state, lang: action.lang }
+    case types.FETCH_PAGE_LOADING:
+        return { ...state, loading: action.loading }
     default:
         return state
     }

@@ -123,10 +123,7 @@ input:focus {
 .dropdown-toggle .nav-link{
   padding-left: 0px
 }
-.content__header--with-line {
-  border-bottom: 2px solid green;
-  padding-top: 50px;
-}
+
 @media (min-width: 768px){
   .navbar-expand-md .navbar-nav .nav-link {
     /* padding-right: 1.5rem; */
@@ -158,9 +155,6 @@ input:focus {
   height: 40px;
   text-transform: uppercase;
 }
-.orders__filters{
-  padding-top: 50px;
-}
 .active-icon{
   color: #2EC826;
   margin-Top:3px;
@@ -181,14 +175,6 @@ input:focus {
   padding: .75rem;
   vertical-align: middle;
   border-top: 1px solid #dee2e6;
-}
-.orders{
-  padding-bottom: 50px;
-  border-bottom: 1px solid #eeeeee;
-}
-.table-responsive {
-  padding-top: 30px;
-
 }
 th {
   border-top: 1px solid #dddddd;
@@ -212,7 +198,6 @@ td:last-child {
 }
 .action-icon{
   cursor: pointer;
-  font-size: 18px;
 }
 .table--striped tbody tr:nth-child(2n) {
 	background-color: rgba(102, 190, 226, 0.05)
@@ -314,4 +299,79 @@ margin-top: 370px;
 }
 .c-logo__image-red {
   color: #e7343f;
+}
+.page-loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.9);
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards;
+}
+.list-error{
+  text-align: left;
+  margin-top: 10px;
+}
+@media (min-width: 1200px){
+  .container {
+      max-width: 100%;
+  }
+}
+.dropdown-menu{
+  margin-top:10px
+}
+.sidebar-logo{
+  margin-top: -47px;
+  padding-bottom: 32px;
+  width: 97% !important;
+}
+.mobile_sidebar-logo{
+  width: 100%;
+  padding: 0px
+}
+.regist_number-div{
+  padding-top:20px
+}
+.table-pagination{
+  padding-top:30px
+}
+table.dataTable thead th {
+  padding: 10px 18px;
+  border-bottom: 1px solid #ddd;
+}
+table.dataTable.no-footer {
+  border-bottom: 1px solid #ddd;
+}
+.table td {
+  padding: .75rem;
+  vertical-align: middle;
+  border-top: 1px solid #fff !important;
+}
+.table--striped tbody tr:nth-child(2n) {
+  background-color: rgba(49, 83, 97, 0.05);
+}
+.input-text{
+  height: calc(1.5em + .75rem + 6px) !important;
+}
+.react-phone-number-input__icon-image {
+  margin-top: -11px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.react-tel-input .form-control{
+  height: calc(1.5em + .75rem + 6px) !important;
+  width: 100%;
+}
+.sort-style {
+  background : none !important;
+  border-top: 1px solid #fff !important;
 }

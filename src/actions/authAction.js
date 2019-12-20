@@ -6,6 +6,7 @@ import history from '../history';
 
 export const fetchLoginData = (params) => {
     return (dispatch) => {
+        dispatch(fetchPageLoading(true));
         var settings = {
             "url": API.GetToken,
             "method": "POST",
@@ -21,17 +22,26 @@ export const fetchLoginData = (params) => {
           $.ajax(settings).done(function (response) {
           })
           .then(response => {
-              console.log('3333333', response);
-            // window.localStorage.setItem('cf_sales_token', response.access_token);
-            // window.localStorage.setItem('cf_sales_userName', response.userName);
-            // window.localStorage.setItem('cf_sales_roles', response.roles);
-            // dispatch(fetchLoginDataSuccess(response));
-            // history.push('/user')
+            dispatch(fetchPageLoading(false));
+            window.localStorage.setItem('fri_token', response.access_token);
+            window.localStorage.setItem('fri_userName', response.userName);
+            window.localStorage.setItem('fri_roles', response.roles);
+            dispatch(fetchLoginDataSuccess(response));
+            history.push('/dashboard')
         })
         .catch(err => {
+            dispatch(fetchPageLoading(false));
             dispatch(fetchLoginDataFail(err.responseJSON.error_description));
         });
     };
+}
+
+export const fetchPageLoading = (data) => {
+    
+    return {
+        type: types.FETCH_PAGE_LOADING,
+        loading:data
+    }
 }
 
 //login fail
@@ -76,7 +86,7 @@ export const blankdispatch = () => {
 export const fetchBlankData = () => {
     return{
         type: types.FETCH_BlANK_DATA,
-        error:""
+        error:"",
     }
 }
 

@@ -8,14 +8,14 @@ import history from './history';
 import './assets/css/style.min.css';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.app.css';
-
+import 'dotenv'
 import { getAuth } from './components/auth';
 const isAuthenticated = getAuth();
 const store = configureStore()
-// if(!isAuthenticated){
+if(!isAuthenticated){
   window.localStorage.setItem('fri_lang',  'nl_BE');
   window.localStorage.setItem('fri_label',  'Dutch');
-// }
+}
 window.React = React
 
 ReactDOM.render(

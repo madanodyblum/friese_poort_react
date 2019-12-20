@@ -4,6 +4,8 @@ import { Col } from 'react-bootstrap';
 import Sidebar from '../components/sidebar'
 import Header from '../components/header'
 import Dashboard from '../pages/Dashboard/dashboard.js'
+import User from '../pages/User/user_manage.js'
+import Log from '../pages/Log/log_manage'
 import { Switch,Router, Route } from 'react-router-dom';
 import history from '../history';
 import '../assets/css/datatable.css';
@@ -19,7 +21,8 @@ class Layout extends Component {
                 <Router history={history}>
                   <Switch>
                     <Route path="/dashboard" component={Dashboard}/>
-                    {/* <Route path="/user" component={User}/> */}
+                    <Route path="/user" component={User}/>
+                    <Route path="/log" component={Log}/>
                   </Switch>
                 </Router>
             </Col>

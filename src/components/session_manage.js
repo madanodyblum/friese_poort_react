@@ -1,21 +1,9 @@
-import { getUserToken } from './auth';
+import * as Auth   from './auth';
 
 export default class SessionManager {
   static myInstance = null;
   userToken = '';
-
     constructor() {
-    this.userToken=getUserToken();
-  }
-
-  saveSessionUserToken() {
-    getUserToken()
-      .then(token => {
-        this.userToken = token;
-      })
-      .catch(err => {
-        this.userToken = '';
-      });
   }
   static shared() {
     if (SessionManager.myInstance == null) {
@@ -27,9 +15,8 @@ export default class SessionManager {
   getAuthorizationHeader = () => {
     return {
       headers: {
-        'Authorization': 'Bearer ' + this.userToken,
+        'Authorization': 'Bearer ' + Auth.getUserToken(),
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
       }
     };
   };
